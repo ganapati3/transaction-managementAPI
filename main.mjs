@@ -18,6 +18,9 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use(express.json());
 app.use('/api', transactionRoutes);
 
+app.get('/', () => {
+    return "Hello world!"
+})
 
 
 app.listen(port, () => {
