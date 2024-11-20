@@ -1,7 +1,7 @@
 {
   "type": "module",
   "scripts": {
-    "start": "node main.mjs",
+    "start": "NODE_ENV=production node main.mjs",
     "build": "echo 'No build step for serverless functions'"
   },
   "dependencies": {
@@ -10,7 +10,6 @@
     "express": "^4.21.1",
     "express-validator": "^7.2.0",
     "mysql2": "^3.11.4",
-    "nodemon": "^3.1.7",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.1"
   },
