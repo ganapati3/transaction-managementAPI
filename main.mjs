@@ -2,7 +2,7 @@ import express from "express";
 import transactionRoutes from './src/routes/transactionRoutes.mjs'
 import swaggerJsdoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
-import swaggerDocument from './swagger-output.json' assert { type: 'json' };
+// import swaggerDocument from './swagger-output.json' assert { type: 'json' };
 import fs from 'fs';
 import path from 'path';
 
