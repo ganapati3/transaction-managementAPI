@@ -1,6 +1,8 @@
-[build]
-  command = "npm install"
-  publish = "/"
-
 [functions]
-  directory = "functions"  # Tell Netlify where to find the functions
+  external_node_modules = ["express"]
+  node_bundler = "esbuild"
+[[redirects]]
+  force = true
+  from = "/api/*"
+  status = 200
+  to = "/.netlify/functions/api/:splat"

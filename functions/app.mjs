@@ -26,5 +26,5 @@ app.get('/', (req, res) => {
   res.send('Hello world!');
 });
 
-// Export the handler for Netlify to use
+api.use('/.netlify/functions/', transactionRoutes);
 export const handler = serverless(app);
