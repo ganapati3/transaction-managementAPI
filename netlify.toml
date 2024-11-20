@@ -1,9 +1,6 @@
 [build]
-  command = "npm install && npm run build"   # Use npm build if you need one
-  publish = "/"                               # Publish the root directory
-  functions = "functions"                     # Point to your functions folder
+  command = "npm install"
+  publish = "/"
 
-[[redirects]]
-  from = "/api/*"                            # Redirect to serverless functions
-  to = "/.netlify/functions/:splat"          # Route to the correct function
-  status = 200
+[functions]
+  directory = "functions"  # Tell Netlify where to find the functions
