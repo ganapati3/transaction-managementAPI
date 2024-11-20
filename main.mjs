@@ -3,27 +3,15 @@ import transactionRoutes from './src/routes/transactionRoutes.mjs'
 import swaggerJsdoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
 import swaggerDocument from './swagger-output.json' assert { type: 'json' };
+import fs from 'fs';
+import path from 'path';
+
+const swaggerDocument = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'swagger-output.json'), 'utf-8'));
 
 
 const app = express();
 const port = process.env.PORT || 3000;
 
-// const swaggerOptions = {
-//   definition: {
-//     openapi: "3.0.0",
-//     info: {
-//       title: "Transaction Management API",
-//       version: "1.0.0",
-//       description: "API for managing financial transactions",
-//     },
-//     servers: [{ url: "http://localhost:3000" }],
-//   },
-//   apis: ["./src/routes/*.mjs" ], // Adjust the path to your route/controller files
-// };
-
-// const swaggerSpec = swaggerJsdoc(swaggerOptions);
-
-// Serve Swagger documentation
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 
