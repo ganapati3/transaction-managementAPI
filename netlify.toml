@@ -1,7 +1,7 @@
 [build]
-  command = "npm install && npm run build"   # You can modify if you have a build step
-  publish = "public"                         # The folder where static assets are located
-  functions = "functions"                    # The folder for serverless functions
+  command = "npm install && npm run build"   # Use npm build if you need one
+  publish = "/"                               # Publish the root directory
+  functions = "functions"                     # Point to your functions folder
 
 [[redirects]]
   from = "/api/*"                            # Redirect to serverless functions
