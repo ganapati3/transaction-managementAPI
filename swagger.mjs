@@ -5,11 +5,11 @@ const doc = {
     title: 'Transaction Management API',
     description: 'API for managing financial transactions',
   },
-  host: 'localhost:3000',
-  schemes: ['http'],
+  host: process.env.NODE_ENV === 'production' ? 'transaction-managementapi.onrender.com' : 'localhost:3000',
+  schemes: [process.env.NODE_ENV === 'production' ? 'https' : 'http'],
 };
 
-const outputFile = './swagger-output.json'; // Output JSON file
-const endpointsFiles = ['./main.mjs']; // Entry point for routes
+const outputFile = './swagger-output.json'; 
+const endpointsFiles = ['./main.mjs']; 
 
 swaggerAutogen(outputFile, endpointsFiles, doc);

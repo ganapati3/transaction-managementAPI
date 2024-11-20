@@ -10,7 +10,8 @@ const swaggerDocument = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'swa
 
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
+console.log(process.env.port)
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
