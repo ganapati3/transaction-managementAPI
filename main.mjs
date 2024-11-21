@@ -12,6 +12,7 @@ const swaggerDocument = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'swa
 const app = express();
 const port = process.env.PORT || 3000;
 console.log(process.env.PORT)
+console.log(process.env.NODE_ENV)
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
@@ -19,8 +20,8 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use(express.json());
 app.use('/api', transactionRoutes);
 
-app.get('/', () => {
-    return "Hello world!"
+app.get('/', (req,res) => {
+    res.status(200).json("Hello world!");
 })
 
 
