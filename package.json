@@ -1,8 +1,8 @@
 {
   "type": "module",
   "scripts": {
-    "start": "NODE_ENV=production node main.mjs",
-    "build": "NODE_ENV=production node swagger.mjs"
+    "start": "node main.mjs",
+    "build": "node swagger.mjs"
   },
   "dependencies": {
     "body-parser": "^1.20.3",
